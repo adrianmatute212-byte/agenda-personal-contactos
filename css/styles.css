@@ -1,0 +1,411 @@
+/* Estilos generales - Agenda Personal de Contactos */
+:root {
+    --bg: #f4f6f9;
+    --surface: #ffffff;
+    --ink: #1e293b;
+    --muted: #64748b;
+    --border: #e2e8f0;
+    --primary: #1d4ed8;
+    --primary-dark: #1e40af;
+    --danger: #dc2626;
+    --danger-dark: #b91c1c;
+    --star: #d97706;
+    --star-bg: #fef3c7;
+    --success-bg: #ecfdf5;
+    --success-text: #065f46;
+    --error-bg: #fef2f2;
+    --error-text: #991b1b;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.5;
+}
+
+.container {
+    max-width: 1040px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.container-narrow {
+    max-width: 620px;
+}
+
+/* Encabezado */
+.topbar {
+    background: var(--ink);
+    color: #ffffff;
+    padding: 1.25rem 0;
+    margin-bottom: 1.75rem;
+}
+
+.topbar-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.topbar h1 {
+    margin: 0;
+    font-size: 1.45rem;
+    font-weight: 700;
+}
+
+.subtitle {
+    margin: 0.2rem 0 0;
+    color: #cbd5e1;
+    font-size: 0.92rem;
+}
+
+/* Alertas */
+.alert {
+    padding: 0.85rem 1rem;
+    border-radius: 8px;
+    margin-bottom: 1.25rem;
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+.alert-success {
+    background: var(--success-bg);
+    color: var(--success-text);
+    border: 1px solid #a7f3d0;
+}
+
+.alert-error {
+    background: var(--error-bg);
+    color: var(--error-text);
+    border: 1px solid #fecaca;
+}
+
+.alert-error ul {
+    margin: 0;
+    padding-left: 1.2rem;
+}
+
+/* Barra de filtros y búsqueda */
+.toolbar {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 1.25rem;
+}
+
+.tabs {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.tab {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    padding: 0.55rem 1rem;
+    border-radius: 999px;
+    background: var(--surface);
+    color: var(--ink);
+    text-decoration: none;
+    border: 1px solid var(--border);
+    font-weight: 600;
+    font-size: 0.92rem;
+    transition: background 0.15s, border-color 0.15s;
+}
+
+.tab:hover {
+    border-color: var(--primary);
+}
+
+.tab.active {
+    background: var(--primary);
+    color: #ffffff;
+    border-color: var(--primary);
+}
+
+.tab .badge {
+    background: rgba(15, 23, 42, 0.08);
+    padding: 0.1rem 0.5rem;
+    border-radius: 999px;
+    font-size: 0.8rem;
+}
+
+.tab.active .badge {
+    background: rgba(255, 255, 255, 0.22);
+    color: #ffffff;
+}
+
+.search-form {
+    display: flex;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+}
+
+.input {
+    padding: 0.6rem 0.8rem;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-size: 0.95rem;
+    background: var(--surface);
+    color: var(--ink);
+}
+
+.input:focus {
+    outline: 2px solid var(--primary);
+    outline-offset: 1px;
+    border-color: var(--primary);
+}
+
+.select-campo {
+    min-width: 220px;
+}
+
+.search-input {
+    flex: 1;
+    min-width: 220px;
+}
+
+/* Botones */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.6rem 1.05rem;
+    border-radius: 8px;
+    font-size: 0.93rem;
+    font-weight: 600;
+    text-decoration: none;
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: background 0.15s, border-color 0.15s;
+}
+
+.btn-primary {
+    background: var(--primary);
+    color: #ffffff;
+}
+
+.btn-primary:hover {
+    background: var(--primary-dark);
+}
+
+.btn-secondary {
+    background: #e2e8f0;
+    color: var(--ink);
+}
+
+.btn-secondary:hover {
+    background: #cbd5e1;
+}
+
+.btn-danger {
+    background: var(--danger);
+    color: #ffffff;
+}
+
+.btn-danger:hover {
+    background: var(--danger-dark);
+}
+
+.btn-ghost {
+    background: transparent;
+    color: var(--muted);
+    border-color: var(--border);
+}
+
+.btn-ghost:hover {
+    color: var(--ink);
+    background: #e2e8f0;
+}
+
+.btn-ghost-light {
+    background: rgba(255, 255, 255, 0.12);
+    color: #ffffff;
+    border-color: rgba(255, 255, 255, 0.25);
+}
+
+.btn-ghost-light:hover {
+    background: rgba(255, 255, 255, 0.22);
+}
+
+.btn-sm {
+    padding: 0.35rem 0.7rem;
+    font-size: 0.85rem;
+}
+
+/* Tarjeta y tabla */
+.card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(15, 23, 42, 0.05);
+}
+
+.card-header {
+    padding: 1rem 1.25rem;
+    border-bottom: 1px solid var(--border);
+}
+
+.card-header h2 {
+    margin: 0;
+    font-size: 1.1rem;
+}
+
+.count-text {
+    font-weight: 400;
+    color: var(--muted);
+    font-size: 0.92rem;
+}
+
+.table-responsive {
+    width: 100%;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 0.85rem 1rem;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+    vertical-align: middle;
+}
+
+th {
+    background: #f8fafc;
+    font-size: 0.82rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--muted);
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+.cell-name {
+    font-weight: 600;
+}
+
+.mail-link {
+    color: var(--primary);
+    text-decoration: none;
+}
+
+.mail-link:hover {
+    text-decoration: underline;
+}
+
+.col-actions {
+    white-space: nowrap;
+}
+
+.inline-form {
+    display: inline;
+}
+
+/* Botón de favorito */
+.fav-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.3rem 0.65rem;
+    border-radius: 999px;
+    border: 1px solid var(--border);
+    background: #f8fafc;
+    color: var(--muted);
+    cursor: pointer;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.fav-btn .star {
+    font-size: 1rem;
+    line-height: 1;
+}
+
+.fav-btn.is-fav {
+    background: var(--star-bg);
+    color: var(--star);
+    border-color: #fcd34d;
+}
+
+.fav-btn:hover {
+    border-color: var(--star);
+}
+
+/* Formularios */
+.form-card {
+    padding: 1.5rem;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+}
+
+.form-group label {
+    font-weight: 600;
+    font-size: 0.92rem;
+}
+
+.checkbox-group {
+    margin-top: 0.25rem;
+}
+
+.checkbox-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.form-actions {
+    display: flex;
+    gap: 0.75rem;
+    margin-top: 0.5rem;
+}
+
+/* Estado vacío */
+.empty-state {
+    padding: 2.5rem 1.25rem;
+    text-align: center;
+    color: var(--muted);
+}
+
+.footer {
+    text-align: center;
+    padding: 2rem 0;
+    color: var(--muted);
+    font-size: 0.88rem;
+}
+
+@media (max-width: 720px) {
+    .search-form {
+        flex-direction: column;
+    }
+    .select-campo, .search-input {
+        width: 100%;
+    }
+}
